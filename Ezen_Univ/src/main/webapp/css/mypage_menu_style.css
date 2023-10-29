@@ -1,0 +1,43 @@
+html{
+    background: #DEDFEA;
+}
+body, div, li, ul{
+    padding: 0;   
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: blue;
+}
+.menuarea{
+    height: 100%;
+    margin: 0;
+
+}
+.myinfo_li {
+    list-style: none;
+}
+body li{
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #ffffff;
+}
+.topmenu_name{
+    height: 50px;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personalinfo li{
+    list-style: disc;
+}
+.menuarea li{
+    border: 0;
+}
