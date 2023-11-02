@@ -1,30 +1,56 @@
 @charset "UTF-8";
-
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 body{
-	background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/firstpage.jpg');
+	background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/mainback.jpg');
 	background-size: cover;
 	font-family: 'Gothic A1', sans-serif;
 }
-.navbar{
-	background-image:linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+.navbar_in ul{
+	list-style: none;
 }
-.navbar a img{
-	width:150px;
-	padding: 5px;
+.signup{
+	background-color: #333;
+	border-radius: 20px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	border: 0;
+	transition: all 0.3s ease 0s;
+	margin-right: 20px;
+}
+.signup:hover{
+	background-color: #7E7F85;
+}
+.nav-item a{
+	color: white;
+}
+.nav-item a:hover{
+	color: rgb(192, 192, 229);
+}
+header{
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .first_page{
 	padding-top: 50px;
-	width: 2000px;
+	width: 60%;
 	height: 700px;
-	background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	margin-left: 50px;
 	color: white;
-	text-align: center;
+	text-align: left;
 	position: relative;
 	top: 500px;
-	left: 50%;
+	left: 40%;
 	transform: translate(-50%, -50%);
 	font-weight: 400;
-	align-content: center;
+	align-content: left;
 }
 .first_page h1{
 	font-family: 'Anton', sans-serif;
@@ -36,6 +62,7 @@ body{
 	font-weight: 300;
 }
 .login_btn{
+	margin-left: 150px;
 	text-decoration: none;
 	color: white;
 	padding: 10px 30px;
@@ -56,20 +83,21 @@ body{
 .loginbox{
 	align-items: center;
 	text-align: center;
-	box-shadow: 5px 5px 5px;
+	box-shadow: #626262 3px 3px 3px;
 	position: relative;
 	margin-top: 20px;
 	padding-top: 20px;
-	width: 25%;
+	width: 30%;
 	height: 360px;
-	left: 50%;
-	top: 15%;
+	left: 70%;
+	top: -400px;
 	transform: translate(-50%, -50%);
 	background: white;
 	border-radius: 10px;
 	color: black;
-	transition: all 0.3s;
+	transition: all 0.3s ease 0s;
 }
+
 .act {
 	visibility: visible;
 	height: 60vh;
@@ -175,10 +203,10 @@ body{
 	font-weight: 200;
 	font-size: small;
 	background-image:linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
-	height: 200px;
+	height: 150px;
 	position: relative;
 	width: 100%;
-	top: 680px;
+	top: 0px;
 
 }
 .foot{
@@ -200,13 +228,13 @@ body{
 	float: left;
 	border: 0px;
 	left: 400px;;
-	top: 96px;
+	top: 90px;
 	box-sizing: border-box;
 }
 .tel{
 	position: absolute;
 	left: 900px;
-	top: 118px;
+	top: 110px;
 	float: left;
 	border: 0px;
 	width:30%;
