@@ -87,117 +87,123 @@ header{
 	position: relative;
 	margin-top: 20px;
 	padding-top: 20px;
-	width: 30%;
-	height: 360px;
+	width: 25%;
+	height: 400px;
 	left: 70%;
 	top: -400px;
 	transform: translate(-50%, -50%);
-	background: white;
+	background:white;
 	border-radius: 10px;
 	color: black;
+	overflow: hidden;
 	transition: all 0.3s ease 0s;
 }
 
-.act {
-	visibility: visible;
-	height: 60vh;
-}
 .loginbox h2{
 	font-weight: bold;
 	font-size: 50px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
-.loginbox input{
-	border: 1px solid black;
-	border-radius: 3px;
-	margin-top: 5px;
+.loginbox i{
+	font-size: 20px
 }
-.loginbox p{
-	color: #7E7F85;
-	margin-left: 60px;
-}
+
 .btn-close{
 	margin-left:80%;
 }
-.btn {
-	width: 70px;
-	height: 70px;
-	display: inline-flex;
-	flex-direction: column;
+.loginbox input{
+	margin: 10px;
+	outline: none;
+	border-width: 0 0 2px;
+	width: 150px;
+}
+.loginbox intput:focus{
+	outline: none;
+}
+.align{
 	align-items: center;
 	justify-content: center;
+	height: 80px;
+	position: relative;
+}
+.choose{
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+}
+.sign-in{
+	margin-left: 15px;
+	display: inline-flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+	width:100px;
+	height: 50px;
+	font-size: 20px;
+	font-weight: 500px;
+	border-radius: 25px;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+	border-color: darkred;
+	color: darkred;
+	transition: all 0.3s ease 0s;
+	padding-bottom: 2px;
+}
+.sign-in:hover{
+	background-color: darkred;
+	color: white;
+}
+.btn-signin{
+
+	display: inline-block;
+	top: 20%;
+
+}
+.loginbox a{
+	text-decoration: none;
+	color: darkblue;
+	font-size: 12px;
+}
+.loginbox a:hover{
+	color: red;
+}
+.loginbox .signupbtn{
+	background-color: white;
+	border: none;
+	color: darkblue;
+}
+.loginbox .signupbtn:hover{
+	color: red;
+}
+.logintext{
+	z-index: -99;
 }
 /* ---------- 라디오버튼 --------------- */
-.select_stu{
-	font-size: 20px;
-	margin-right: 10px;
-	margin-top: 10px;
+.choose{
+	font-size: 15px;
 }
 
-.select_stu input[type=radio]{
+.choose input[type=radio]{
     display: none;
 }
-.select_stu input[type=radio]+label{
-    
+.choose input[type=radio]+label{
     cursor: pointer;
-    height: 24px;
-    width: 90px;
-    border: 1px solid #2240F0;
-	border-radius: 3px;
+    border: none;
     line-height: 24px;
-    text-align: center;
     font-weight:bold;
-    font-size:13px;
 	padding-bottom: 0px;
 }
-.select_stu input[type=radio]+label{
-    background-color: #fff;
-    color: #2240F0;
+.choose input[type=radio]:checked+label{
+    color: #d61a1a;
 }
-.select_stu input[type=radio]:checked+label{
-    background-color: #2240F0;
-    color: #fff;
-}
-.select_pro{
-	font-size: 20px;
-	margin-bottom: 10px;
-	margin-right: 10px;
-}
-.select_pro input[type=radio]{
-    display: none;
-}
-.select_pro input[type=radio]+label{
-    display: inline-block;
-    cursor: pointer;
-    height: 24px;
-    width: 90px;
-    border: 1px solid #333;
-	border-radius: 3px;
-    line-height: 24px;
-    text-align: center;
-    font-weight:bold;
-    font-size:13px;
-	padding-bottom: 0;
-}
-.select_pro input[type=radio]+label{
-    background-color: #fff;
-    color: #333;
-}
-.select_pro input[type=radio]:checked+label{
-    background-color: #333;
-    color: #fff;
-}
+
 /*----------------------------------------*/
-.logintable{
-	margin-left:auto; 
-    margin-right:auto;
-}
-.searchInfo{
-	color: #4E54D9;
-}
-.searchInfo a{
-	text-decoration: none;
-}
+
 #footer{
 	font-family: 'IBM Plex Sans KR', sans-serif;
 	font-weight: 200;
