@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;           
+}
+iframe{
+    display: block;
+}
+.header{
+    background-color: bisque;
+    height: 10%;
+}
+iframe{
+    border: 0;
+    margin: 0;
+}
+.sidebar{
+    display: inline;
+    width: 10%;
+    height: 100%;
+    background-color: #DEDFEA;
+}
+.myinfo{
+    display: block;
+    width: 10%;
+}
+.menubar{
+    display: block;
+    width: 10%;
+    height: 100%;
+}
+.contents{
+    background-color: rgb(89, 186, 186);
+    display: inline;
+    width: 400%
+}
