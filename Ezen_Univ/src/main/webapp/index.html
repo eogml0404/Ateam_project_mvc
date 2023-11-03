@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <link rel="website icon" type="png" href="images/ezen.png">
 <link rel="stylesheet" href="css/index_style.css">
@@ -53,6 +53,11 @@
 				}
 			}
 		}
+
+		function movelogin(){
+			const btn2 = document.getElementById("logintext");
+
+		}
 	</script>
 
 	<div class="first_page">
@@ -61,43 +66,24 @@
 		훈련생과 훈련생을 채용한 산업체 모두가 만족할 수 있는 기관이 되고자 
 		최선을 다할 것입니다.<br><br></p>
 		<button type="button" class="login_btn" id="loginbox_btn" onclick="open_div()" >Welcome</button><br>
-		<p style="text-align: center;">
-			
-			
-		</p>
+		
 	</div>
-	<div class="loginbox" id="loginbox" style="visibility: hidden">
-		<form id="login" name="login">
+	<div class="loginbox" id="loginbox" style="visibility: hidden;">
+	<div class="logintext" id="logintext">
+	<form id="login" name="login">
 		<button type="button" class="btn-close" aria-label="Close" onclick="close_btn()"></button>
 		<br><h2>Login</h2>
-		<table class="logintable">
-			<tr>
-				<td>
-					<div class="select_stu">
-						<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">학생</label>
-					</div>
-				</td>
-				<td><input type="text"><br></td>
-				<td rowspan="2"><a href="#" type="button" class="btn btn-secondary m-2 p-3" onclick="logincheck()">login</a></td>
-			</tr>
-			<tr>
-				<td>
-					<div class="select_pro">
-						<input type="radio" id="select_pro" name="select" value="professor"><label for="select_pro">교수</label>
-					</div>
-				</td>
-				<td>
-					<input type="password"><br>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3"> 
-					<br>
-					<span class="searchInfo"><a href="#">아이디찾기</a> | <a href="#">비밀번호 찾기</a><br>
-					<a href="#">회원가입</a><br></span>
-				</td>
-			</tr>	
-		</table>
+		<input type="text" class="inputtype"><i class="fa fa-user" aria-hidden="true"></i><br>
+		<input type="password" class="inputtype"><i class="fa fa-unlock-alt" aria-hidden="true"></i><br>
+		<div class="align">
+			<div class="choose">
+				<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label><br>
+				<input type="radio" id="select_pro" name="select" value="professor"><label for="select_pro">professor</label>
+			</div>
+			<div class="btn-signin"><button class="sign-in" onclick="logincheck()">Sign-in</button></div>
+		</div>
+		<a href="#">Search ID & Password</a><br>
+		<button type="button" class="signupbtn" id="signupbtn" onclick="movelogin()" >SIGN-UP</button>
 	</form>
 	</div>
 
