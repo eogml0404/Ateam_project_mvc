@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300&family=Kanit:ital,wght@1,500&Kanit:wght@700&family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300&family=Passion+One:wght@400;700&family=Quicksand&display=swap" rel="stylesheet">
 <link rel="website icon" type="png" href="images/ezen.png">
 <link rel="stylesheet" href="css/index_style.css">
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -20,6 +20,12 @@
 			<button class="btnLogin-popup">SIGN-IN</button>
 		</nav>
 	</header>
+	<div class="first">
+		<h1>Ezen University</h1><br>
+		<p>저희 이젠은 4차 산업혁명을 선도하는 전문교육기관이 되고자 노력하며,<br>
+		훈련생과 훈련생을 채용한 산업체 모두가 만족할 수 있는 기관이 되고자 
+		최선을 다할 것입니다.<br><br></p>
+	</div>
 	<div class="wrapper">
 		<span class="icon-close"><ion-icon name="close"></ion-icon></span>
 		<div class="form-box login">
@@ -37,13 +43,13 @@
 				</div>
 				<div class="remember-forgot">
 					<label><input type="checkbox">REMEMBER ME</label>
-					<a href="#">ID | password 찾기</a>
+					<a href="#" >ID | password 찾기</a>
 				</div>
 				<div class="choose">
 					<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label> | 
 					<input type="radio" id="select_pro" name="select" value="professor"><label for="select_pro">professor</label>
 				</div>
-				<button type="submit" class="btn">Login</button>
+				<button type="submit" class="btn" onclick="login()">Login</button>
 				<div class="login-register">
 					<p><a href="#" class="register-link">SIGN-UP</a></p>
 				</div>
@@ -51,7 +57,7 @@
 		</div>
 		
 		<div class="form-box register">
-			<h2>Registration</h2>
+			<h2 style="font-size: 30px;">Registration</h2>
 			<form action="#">
 				<div class="input-box">
 					<span class="icon"><ion-icon name="person"></ion-icon></span>

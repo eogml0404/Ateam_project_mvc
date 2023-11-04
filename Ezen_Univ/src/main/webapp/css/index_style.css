@@ -27,7 +27,8 @@ header{
 .logo{
 	font-size: 2em;
 	user-select: none;
-	font-family: 'Kanit', sans-serif;
+	font-family: 'Passion One', sans-serif;
+	font-weight: 400;
 }
 .logo a{
 	text-decoration: none;
@@ -77,8 +78,33 @@ header{
 	background: white;
 	color: #162938;
 }
-.wrapper{
+.first{
 	position: relative;
+	width: 800px;
+	height: 300px;
+	display: block;
+	text-align: center;
+	padding-top: 80px;
+	background: rgba(0, 0, 0, 0.5);
+	border: none;
+	backdrop-filter: blur(20px);
+	color: white;
+	transition: .5s;
+}
+.first h1{
+	font-family: 'Passion One', sans-serif;
+	font-weight: 400;
+	font-size: 60px;
+}
+.first p{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: regular 400;
+}
+.first.active-popup{
+	transform: scale(0);
+}
+.wrapper{
+	position: absolute;
 	width: 430px;
 	height: 500px;
 	background-color:rgba(255, 255, 255, 0.7);
@@ -91,7 +117,7 @@ header{
 	align-items: center;
 	overflow: hidden;
 	transform: scale(0);
-	transition: transform .5s ease, height .4s ease;
+	transition: transform .5s ease, height .5s ease;
 }
 .wrapper.active-popup{
 	transform: scale(1);
@@ -105,7 +131,7 @@ header{
 	padding: 30px;
 }
 .wrapper .form-box.login{
-	transition: transform .18s ease;
+	transition: transform .3s ease;
 	transform: translateX(0);
 }
 .wrapper.active .form-box.login{
@@ -118,7 +144,7 @@ header{
 	transform: translateX(400px);
 }
 .wrapper.active .form-box.register{
-	transition: transform .18s ease;
+	transition: transform .3s ease;
 	transform: translateX(0);
 }
 .wrapper .icon-close{
