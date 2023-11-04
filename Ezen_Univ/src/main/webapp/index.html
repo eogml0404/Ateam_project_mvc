@@ -5,108 +5,111 @@
 <title>Insert title here</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300&family=Kanit:ital,wght@1,500&Kanit:wght@700&family=Quicksand&display=swap" rel="stylesheet">
 <link rel="website icon" type="png" href="images/ezen.png">
 <link rel="stylesheet" href="css/index_style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>	
 	<header>
-	<a href="index.html" target="_blank"><img src="images/ezen_univ_w.png" width="160px"></a>
-	<nav class="navbar_in">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a class="nav-link" aria-current="page" href="https://www.cubeitac.com/">
-					<i class="fa fa-home" aria-hidden="true"> home</i>
-				</a>
-			</li>
-		</ul>
-	</nav>
-	<button class="signup" onclick="location.href='./signup/signup.html'">sign-up</button>
+		<h2 class="logo"><a href="index.html">Ezen_Univ</a></h2>
+		<nav class="navigation">
+			<a href="https://www.cubeitac.com/">HOME</a>
+			<a href="#">INFO</a>
+			<button class="btnLogin-popup">SIGN-IN</button>
+		</nav>
 	</header>
-	<script>
+	<div class="wrapper">
+		<span class="icon-close"><ion-icon name="close"></ion-icon></span>
+		<div class="form-box login">
+			<h2>Login</h2>
+			<form action="#">
+				<div class="input-box">
+					<span class="icon"><ion-icon name="person"></ion-icon></span>
+					<input type="text" required>
+					<label>ID</label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="key"></ion-icon></span>
+					<input type="password" required>
+					<label>password</label>
+				</div>
+				<div class="remember-forgot">
+					<label><input type="checkbox">REMEMBER ME</label>
+					<a href="#">ID | password 찾기</a>
+				</div>
+				<div class="choose">
+					<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label> | 
+					<input type="radio" id="select_pro" name="select" value="professor"><label for="select_pro">professor</label>
+				</div>
+				<button type="submit" class="btn">Login</button>
+				<div class="login-register">
+					<p><a href="#" class="register-link">SIGN-UP</a></p>
+				</div>
+			</form>
+		</div>
 		
-		function open_div(){
-			var btn1 = document.getElementById("loginbox");
-			btn1.style.visibility = "";
-		}
-			 
-		function close_btn(){
-			const clbtn = document.getElementById("loginbox");
-			clbtn.style.visibility="hidden";
-		}
-
-		function logincheck(){
-			var radios = document.getElementsByName('select');
-			for(var radio of radios){
-				if(radio.checked){
-					var checked_select = radio.value;
-					//alert(checked_select);
-					if(checked_select === "student"){
-						location.href='./main/main_s.html';
-					}else{
-						location.href='./main/main_p.html';
-					}
-				}
-			}
-		}
-
-		function movelogin(){
-			const btn2 = document.getElementById("logintext");
-
-		}
-	</script>
-
-	<div class="first_page">
-		<h1>Ezen University</h1>
-		<p>저희 이젠은 4차 산업혁명을 선도하는 전문교육기관이 되고자 노력하며,<br>
-		훈련생과 훈련생을 채용한 산업체 모두가 만족할 수 있는 기관이 되고자 
-		최선을 다할 것입니다.<br><br></p>
-		<button type="button" class="login_btn" id="loginbox_btn" onclick="open_div()" >Welcome</button><br>
-		
-	</div>
-	<div class="loginbox" id="loginbox" style="visibility: hidden;">
-	<div class="logintext" id="logintext">
-	<form id="login" name="login">
-		<button type="button" class="btn-close" aria-label="Close" onclick="close_btn()"></button>
-		<br><h2>Login</h2>
-		<input type="text" class="inputtype"><i class="fa fa-user" aria-hidden="true"></i><br>
-		<input type="password" class="inputtype"><i class="fa fa-unlock-alt" aria-hidden="true"></i><br>
-		<div class="align">
-			<div class="choose">
-				<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label><br>
-				<input type="radio" id="select_pro" name="select" value="professor"><label for="select_pro">professor</label>
-			</div>
-			<div class="btn-signin"><button class="sign-in" onclick="logincheck()">Sign-in</button></div>
-		</div>
-		<a href="#">Search ID & Password</a><br>
-		<button type="button" class="signupbtn" id="signupbtn" onclick="movelogin()" >SIGN-UP</button>
-	</form>
-	</div>
-
-	<footer id="footer">
-	<div class="foot">
-		<div class="address">
-			이젠IT아카데미대학교<br>
-			전북 전주시 덕진구 백제대로 572 5층<br>
-			사업자등록번호 : 271-96-00833<br>
-			학원설립 및 운영 등록번호 : 제7090호<br>
-			통신판매업신고번호 : 제2022-전주덕진-0003호<br>
-		</div>
-		<div class="information">
-			대표자: 김정현<br>
-			학원의 명칭 : 이젠IT아카데미대학교<br>
-			개인정보보호책임자 : 홍길동(hong@ezen.com)<br>
-		</div>
-		<div class="tel">
-			T.063)276-2380<br>
-			F.063)276-2384<br>
+		<div class="form-box register">
+			<h2>Registration</h2>
+			<form action="#">
+				<div class="input-box">
+					<span class="icon"><ion-icon name="person"></ion-icon></span>
+					<input type="text" required>
+					<label>ID</label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="key"></ion-icon></span>
+					<input type="password" required>
+					<label>password</label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="key"></ion-icon></span>
+					<input type="password" required>
+					<label>password 확인</label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="pricetag"></ion-icon></span>
+					<input type="text" required>
+					<label>이름<span>(홍길동)</span></label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="call"></ion-icon></span>
+					<input type="tel" required>
+					<label>연락처<span>(01011112222)</span></label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="mail"></ion-icon></span>
+					<input type="email" required>
+					<label>이메일<span>(ezen@ezen.com)</span></label>
+				</div>
+				<div class="input-box birth">
+					<span class="icon"><ion-icon name="calendar-number"></ion-icon></span>
+					<input type="text" required>
+					<label>생년월일<span>(19941024)</span></label>
+				</div>
+				<div class="input-box birth">
+					<span class="icon"><ion-icon name="school"></ion-icon></span>
+					<input type="text" list="depList" required>
+					<datalist id="depList" name="country" size="50" autocomplete="off">
+						<option value="정보통신공학과"></option>
+						<option value="전기공학과"></option>
+						<option value="전자공학과"></option>
+						<option value="건축학과"></option>
+					</datalist>
+					<label class="choosemajor">학과</label>
+				</div>
+				<div class="choose">
+					<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label> | 
+					<input type="radio" id="select_pro" name="select" value="professor"><label for="select_pro">professor</label>
+				</div>
+				<button type="submit" class="btn">회원가입</button>
+				<div class="login-register">
+					<p><a href="#" class="login-link">LOGIN</a></p>
+				</div>
+			</form>
 		</div>
 	</div>
-	</footer>
-	
+	<script src="js/index.js"></script>
 </body>
 </html>
