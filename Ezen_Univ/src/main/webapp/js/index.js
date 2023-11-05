@@ -27,15 +27,13 @@ function login(){
     var fm = document.frm;
 
     var value = document.querySelector('input[name="select"]:checked').value;
-    alert(value);
+   // alert(value);
     if(value==='student'){
-        alert('학생페이지이동');
-        fm.action ="<%=request.getContextPath()%>/member/studentLoginAction.html"; 
-	    fm.method = "post";  
-	    fm.submit();
-        return;
+        alert('학생 로그인 페이지이동');
+        location.href='./main/main_s.html';
     }else{
         alert('교수페이지 이동');
+        location.href='./main/main_p.html';
     }
 
     var radios = document.getElementsByName('select');

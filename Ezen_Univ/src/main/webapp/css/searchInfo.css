@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(200, 200, 200);
+}
+.wrapper{
+    background: transparent;
+    text-align: center;
+    display: block;
+	justify-content: center;
+    width: 100%;
+    height: 500px;
+}
+.wrapper h2{
+    font-size: 2em;
+    height: 60px;
+    padding: 5px;
+}
+.wrapper .searchId-box{
+    position: relative;
+    background: transparent;
+    width: 100%;
+    height: 40%;
+    margin-top: 10px;
+}
+.searchId-box input{
+    width: 150px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid darkblue;
+}
+.wrapper button{
+    width: 50px;
+    height: 30px;
+    outline: 2px solid blue;
+    background: blue;
+    color: white;
+    border-radius: 15px;
+    border-color: transparent;
+    cursor: pointer;
+}
+.searchId-box .idinfo{
+    margin: 20px;
+    transform: scale(0);
+    transition: .3s;
+}
+.searchId-box .idinfo.correct{
+    transform: scale(1);
+}
+.searchId-box .pwdinfo{
+    margin: 20px;
+    transform: scale(0);
+    transition: .3s;
+}
+.searchId-box .pwdinfo.correct{
+    transform: scale(1);
+}
+.wrapper span{
+    font-weight: bold;
+    color: blue;
+}
+.wrapper .searchPwd-box{
+    position: relative;
+    background: yellow;
+    width: 100%;
+    height: 40%;
+}
