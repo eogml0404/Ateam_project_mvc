@@ -24,12 +24,11 @@ iframe{
     width: 10%;
 }
 .menubar{
-    display: block;
+    display: block;     
     width: 10%;
     height: 100%;
 }
 .contents{
-    background-color: rgb(89, 186, 186);
     display: inline;
     width: 400%
 }
