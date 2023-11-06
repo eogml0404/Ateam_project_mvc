@@ -1,0 +1,104 @@
+.container{
+    display: flex;
+}
+.sidebar{
+    width: 50%;
+}
+.myinfo{
+    width: 100%;
+}
+.menubar{
+    width: 100%;
+}
+.contents{
+    padding: 10px;
+}
+.first-line{
+    background: rgb(194, 194, 255);
+    margin-top: 10px;
+    width: 80%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.first-line input{
+    width: 100px;
+    height: 20px;
+}
+.first-line input:disabled{
+    background: white;
+}
+.courselist{
+    overflow-y: scroll;
+    width: 80%;
+    height: 30%;
+}
+.courselist table{
+    width: 100%;
+    background: white;
+    text-align: center;
+    border-collapse: collapse;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.courselist table thead{
+    font-weight: bold;
+    background: rgb(194, 194, 255);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.courselist table tbody tr{
+    background: white;
+}
+.courselist table tbody tr:nth-child(even){
+    background: rgb(236, 236, 236);
+}
+.courselist table button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    color: blue;
+}
+.courselist table button:hover{
+    text-decoration: underline;
+}
+.studentlist{
+    display: block;
+    overflow-y: scroll;
+    width: 60%;
+    height: 40%;
+    margin-top: 10px;
+}
+.studentlist .name-button{
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+}
+.name-button span{
+    font-size: 1em;
+    font-weight: bold;
+}
+.studentlist table{
+    background: white;
+    width: 90%;
+    margin: 10px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.studentlist table thead{
+    background: rgb(232, 232, 232); 
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.studentlist table tbody tr:nth-child(even){
+    background: rgb(220, 220, 249);
+}
+.studentlist table button{
+    background: rgb(255, 210, 96);
+    width: 50px;
+    cursor: pointer;
+}

@@ -56,3 +56,12 @@
 .std-list .attenvalue{
     width: 50px;
 }
+.std-list table tbody tr, td{
+    border: 1px solid gray;
+}
+.std-list table tbody tr:nth-child(even){
+    background: rgb(236, 236, 236);
+}
+input:disabled{
+    background: white;
+}
