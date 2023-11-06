@@ -1,0 +1,58 @@
+.container{
+    display: flex;
+}
+.sidebar{
+    width: 50%;
+}
+.myinfo{
+    width: 100%;
+}
+.menubar{
+    width: 100%;
+}
+.contents{
+    padding: 20px;
+}
+.select-sub{
+    width: 100%;
+    background: rgb(194, 194, 255);
+    padding: 10px;
+}
+.student-list{
+    width: 100%;
+}
+.student-list .btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.student-list .btn button{
+    width: 50px;
+    height: 30px;
+}
+.std-list{
+    background: white;
+    width: 100%;
+}
+.std-list table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+.std-list table thead{
+    background: rgb(194, 194, 255);
+}
+.std-list table tbody tr{
+    height: 15px;
+    margin: 5px;
+}
+.std-list table button{
+    cursor: pointer;
+    border: 0.5px solid black;
+}
+
+.std-list .attenvalue{
+    width: 50px;
+}
