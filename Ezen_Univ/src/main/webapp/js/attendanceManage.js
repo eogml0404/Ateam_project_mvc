@@ -1,8 +1,6 @@
 for(let i=0; i<=3; i++){
-    const getValue = "getValue"+i;
 
-    function getValue(event){
-        
+    function getValue(event,i){
         const value=event.target.value;
         const eleid="value"+i;
         document.getElementById(eleid).value=value;
