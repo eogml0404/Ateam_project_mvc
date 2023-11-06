@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title></title>
+<link rel="stylesheet" href="../css/iframe.css">
 <style>
 .subject {
     display: flex;
@@ -11,29 +12,37 @@
     width: 100%;
 }
 .writebtn{
-        background-color: black;
-        border-radius: 5px;
-        color: whitesmoke;
-        text-decoration: none;
-        
-      
-    }
+    background-color: black;
+    border-radius: 5px;
+    color: whitesmoke;
+    text-decoration: none; 
+}
 .list1{
     display: flex;
     justify-content: space-between;
     align-items: center;
  
 }
-
-
+.sidebar{
+    width: 50%;
+}
+.myinfo{
+    width: 100%;
+}
+.menubar{
+    width: 100%;
+}
+.container{
+    display: flex;
+} 
 .list{
-        background-color: black;
-        border-radius: 5px;
-        color: whitesmoke;
-        text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    color: whitesmoke;
+    text-decoration: none;
 }
     
-.contents{
+.text-area{
     width: 100%;
     border: 2px solid black;
     height: 500px;
@@ -44,12 +53,12 @@
     width: 80%;
 }
 
-.container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-                
-    }
+.contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -70px;        
+}
 
 .subject{
     display: flex;
@@ -57,8 +66,7 @@
     border-top: 3px solid black;
 }
 
-.subject td{
-   
+.subject td{ 
     margin: 5px;
 }
 
@@ -66,50 +74,54 @@
 
 </head>
 <body>
-    
-<div class="container">
-    <h1>휴보강 공지등록</h1>
-<table class="noticewrite">
-    <tr class="subject">
-        <td>제목</td>
-        <td>
-        <select name="noticetype">
-            <option value="skip">휴강</option>
-            <option value="sup">보강</option>
-        </select>
-        </td>
-        <td>
-            <select name="coursetype">
-                <option value="cidx1">고급프로그래밍</option>
-                <option value="cidx2">사물인터넷통신</option>
-                <option value="cidx3">시스템소프트웨어설계</option>
+    <div class="header">
+        <iframe src = "../main/navigation_p.html" width = "100%" height="55" ></iframe>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="myinfo">
+                <iframe src = "../leftmenu/myinfo_p.html" width="100%" height="200"></iframe>
+            </div>
+            <div class="menubar">
+                <iframe src = "../leftmenu/notice_p.html" width="100%" height="700"></iframe>
+            </div>
+        </div> 
+    <div class="contents">
+        <h1>휴보강 공지등록</h1>
+        <table class="noticewrite">
+        <tr class="subject">
+            <td>제목</td>
+            <td>
+            <select name="noticetype">
+                <option value="skip">휴강</option>
+                <option value="sup">보강</option>
             </select>
-        </td>
-        <td>
-            <input type="date" name="when">
-        </td>
-        
-    </tr>
-    <tr>
-        <td>
-            <textarea class="contents"></textarea>
-
-        </td>
-    </tr>
-    <tr>
-        <td class="list1">
-            <a class="list" href="noticeList_p.html">목록</a>
-          
-            <button type="submit" class="writebtn">글쓰기</button> 
-        </td>
-   
-   
-
-    </tr> 
-
-</table>
-</div>
-
-
+            </td>
+            <td>
+                <select name="coursetype">
+                    <option value="cidx1">고급프로그래밍</option>
+                    <option value="cidx2">사물인터넷통신</option>
+                    <option value="cidx3">시스템소프트웨어설계</option>
+                </select>
+            </td>
+            <td>
+                <input type="date" name="when">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea class="text-area"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="list1">
+                <a class="list" href="noticeList_p.html">목록</a>
+            
+                <button type="submit" class="writebtn">글쓰기</button> 
+            </td>
+        </tr> 
+        </table>
+        </div>
+    </div>
 </body>
 </html>
