@@ -35,17 +35,17 @@
 			<form action="#">
 				<div class="input-box">
 					<span class="icon"><ion-icon name="person"></ion-icon></span>
-					<input type="text" required>
+					<input type="text" name="memberId" id="memberId" required>
 					<label>ID</label>
 				</div>
 				<div class="input-box">
 					<span class="icon"><ion-icon name="key"></ion-icon></span>
-					<input type="password" required>
+					<input type="password" name="memberPwd" id="memberPwd" required>
 					<label>password</label>
 				</div>
 				<div class="remember-forgot">
 					
-					<button onclick="window.open('member/searchInfo.html','window_name','width=500,height=500,location=no,status=no,scrollbars=yes');">ID | password 찾기</button>
+					<button onclick="window.open('member/searchInfo.html','window_name','width=600,height=700,location=no,status=no,scrollbars=yes');">ID | password 찾기</button>
 				</div>
 				<div class="choose">
 					<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label> | 
