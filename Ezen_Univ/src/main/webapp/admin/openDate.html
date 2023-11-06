@@ -6,41 +6,51 @@
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../css/iframe.css">
-    <style>
-        .container{
-            display: flex;
-        }
-        .sidebar{
-            width: 50%;
-        }
-        .myinfo{
-            width: 100%;
-        }
-        .menubar{
-            width: 100%;
-        }
-        .contents{
-            padding: 10px;
-        }
-        
-    </style>
+
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center
+
+    }
+
+
+</style>
+
+
 </head>
 <body>
-    <div class="header">
-        <iframe src = "../main/navigation_a.html" width = "100%" height="55" ></iframe>
-    </div>
     <div class="container">
-        <div class="sidebar">
-            <div class="myinfo">
-                <iframe src = "../leftmenu/myinfo_a.html" width="100%" height="100"></iframe>
-            </div>
-            <div class="menubar">
-                <iframe src = "../leftmenu/openDate_a.html" width="100%" height="700"></iframe>
-            </div>
-        </div>
-        <div class="contents">
-            힝...
-        </div>
-    </div>
+    <h1>개강날짜 등록</h1>
+    <br>
+    <br>
+    <input type="date" id="dateInput">
+    <p id="dateInfo"></p>
+
+    <script>
+        const dateInput = document.getElementById('dateInput');
+        const dateInfo = document.getElementById('dateInfo');
+
+        dateInput.addEventListener('change', () => {
+            const selectedDate = new Date(dateInput.value);
+            const year = selectedDate.getFullYear();
+            const month = selectedDate.getMonth() + 1; // Month is 0-indexed
+            let semester = "";
+
+            if (month >= 3 && month <= 6) {
+                semester = "1학기";
+            } else if (month >= 9 && month <= 12) {
+                semester = "2학기";
+            } else {
+                semester = "해당 없음";
+            }
+
+            dateInfo.textContent = `${year}년 ${semester}`;
+        });
+    </script>
+
+</div>
+
 </body>
 </html>
