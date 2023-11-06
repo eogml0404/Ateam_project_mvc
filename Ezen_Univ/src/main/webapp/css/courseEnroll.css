@@ -66,10 +66,9 @@
     text-decoration: underline;
 }
 .studentlist{
-    background: yellow;
     display: block;
     overflow-y: scroll;
-    width: 80%;
+    width: 60%;
     height: 40%;
     margin-top: 10px;
 }
@@ -82,4 +81,24 @@
 .name-button span{
     font-size: 1em;
     font-weight: bold;
+}
+.studentlist table{
+    background: white;
+    width: 90%;
+    margin: 10px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.studentlist table thead{
+    background: rgb(232, 232, 232); 
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.studentlist table tbody tr:nth-child(even){
+    background: rgb(220, 220, 249);
+}
+.studentlist table button{
+    background: rgb(255, 210, 96);
+    width: 50px;
+    cursor: pointer;
 }

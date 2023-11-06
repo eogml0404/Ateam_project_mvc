@@ -7,6 +7,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../css/iframe.css">
     <link rel="stylesheet" href="../css/courseEnroll.css">
+    <script>
+        function selectAtt(selectAll){
+            const checkboxes = document.getElementsByName('student');
+            
+        }
+    function courseMatchStudent(){
+        const cidx = document.getElementById('coursename').value;
+        const studentlist = document.getElementsByClassName('studentlist');
+        
+    }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -44,7 +55,7 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><button onclick="">생활영어1</button></td>
+                            <td><button id="coursename" value="cidx" onclick="courseMatchStudent()">생활영어1</button></td>
                             <td>치위생학과</td>
                             <td>1</td>
                             <td>교양필수</td>
@@ -103,14 +114,49 @@
             <div class="studentlist">
                 <div class="name-button">
                     <span>치아형태학</span>
-                    <button onclick="">일괄 등록</button>
+                    <button style="cursor: pointer;" onclick="">일괄 등록</button>
                 </div>
                 <table>
                     <thead>
                         <tr>
-                            <td><input type="checkbox" name="student" value="selectAll" onclick="selectAtt(this)"></td>
+                            <td style="width: 40px;"><input type="checkbox" name="student" value="selectAll" onclick="selectAtt(this)"></td>
+                            <td style="width: 40px;">순번</td>
+                            <td style="width: 100px;">이름</td>
+                            <td style="width: 120px;">학번</td>
+                            <td style="width: 40px;">학년</td>
+                            <td style="width: 180px;">학과</td>
+                            <td>처리</td>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="student" value="sidx1"></td>
+                            <td>1</td>
+                            <td>김이젠1</td>
+                            <td>202310101</td>
+                            <td>1</td>
+                            <td>치위생학과</td>
+                            <td><button value="sidx1" onclick="">등록</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="student" value="sidx2"></td>
+                            <td>2</td>
+                            <td>김이젠2</td>
+                            <td>202310102</td>
+                            <td>1</td>
+                            <td>치위생학과</td>
+                            <td><button value="sidx2" onclick="">등록</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="student" value="sidx3"></td>
+                            <td>3</td>
+                            <td>김이젠3</td>
+                            <td>202310103</td>
+                            <td>1</td>
+                            <td>치위생학과</td>
+                            <td><button value="sidx3" onclick="">등록</button></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
