@@ -6,19 +6,41 @@
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../css/iframe.css">
+    <style>
+        .container{
+            display: flex;
+        }
+        .sidebar{
+            width: 50%;
+        }
+        .myinfo{
+            width: 100%;
+        }
+        .menubar{
+            width: 100%;
+        }
+        .contents{
+            padding: 10px;
+        }
+        
+    </style>
 </head>
 <body>
     <div class="header">
         <iframe src = "../main/navigation_a.html" width = "100%" height="55" ></iframe>
     </div>
-    <div class="sidebar">
-        <div class="myinfo">
-            <iframe src = "../leftmenu/myinfo_a.html" width="100%" height="100"></iframe>
+    <div class="container">
+        <div class="sidebar">
+            <div class="myinfo">
+                <iframe src = "../leftmenu/myinfo_a.html" width="100%" height="100"></iframe>
+            </div>
+            <div class="menubar">
+                <iframe src = "../leftmenu/openDate_a.html" width="100%" height="700"></iframe>
+            </div>
         </div>
-        <div class="menubar">
-            <iframe src = "../leftmenu/openDate_a.html" width="100%" height="700"></iframe>
+        <div class="contents">
+            힝...
         </div>
     </div>
-
 </body>
 </html>
