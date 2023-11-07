@@ -6,8 +6,8 @@ import java.sql.DriverManager;
 
 public class DbConn {
 
-	private String url="jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC&useSSL=false";
-	private String user="root";
+	private String url="jdbc:mysql://192.168.0.47:3306/mysql?serverTimezone=UTC&useSSL=false";
+	private String user="ezen";
 	private String password="1234";
 
 	public Connection getConnection() {

@@ -35,7 +35,7 @@
     font-weight: bold;
     background: rgb(194, 194, 255);
 }
-.list_table table  tbody tr{
+.list_table table tbody tr{
     background: white;
 }
 .list_table table tbody tr:nth-child(even){

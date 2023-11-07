@@ -1,0 +1,95 @@
+.first_line{
+    padding: 10px;
+    display: block;
+    background: rgb(194, 194, 255);
+}
+.first_line input{
+    width: 80px;
+}
+.list_table{
+    margin-top: 5px;
+}
+.list_table table{
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    text-align: center;
+}
+.list_table table thead{
+    font-weight: bold;
+    background: rgb(194, 194, 255);
+}
+.list_table table tbody tr{
+    background: white;
+}
+.list_table table tbody tr:nth-child(even){
+    background: rgb(236, 236, 236);
+}
+.mytable{
+    margin-top: 5px;
+}
+.mytable table{
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    text-align: center;
+}
+.mytable table thead{
+    font-weight: bold;
+    background: rgb(194, 194, 255);
+}
+.mytable table tbody tr{
+    height: 50px;
+    font-size: 12px;
+}
+.mytable table tbody tr,td{
+    border: 1px solid gray;
+}
+.details_first_line{
+	margin-top: 5px;
+    padding: 10px;
+    display: block;
+    background: rgb(194, 194, 255);
+}
+.details_first_line input{
+    width: 80px;
+}
+
+.register table{
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+
+.inputbox {
+	border : 1px solid white;
+	junstify-content : left;
+}
+.register input[type=text]{ 
+    flex-grow: 1;
+    padding: 7px 5px;
+    border: #e6eef5 solid 2px;
+    background-color: #fbfbfd;
+    color: #263747;
+    width : 70%;
+    font-size: 15px;
+}
+
+input[type=button] { 
+	border: white solid 2px;
+    background-color: #0078ff;
+    color: #fff;
+    height : 30px;
+    font-weight : bold ;
+    font-size : 15px;
+    cursor: pointer;
+    width: 50px;
+    justify-content: center;
+}
+
