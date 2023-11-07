@@ -13,15 +13,15 @@
 </head>
 <body>
 <div class="header">
-    <iframe src = "../main/navigation_p.html" width = "100%" height="55" ></iframe>
+    <iframe src = "../main/navigation_p.jsp" width = "100%" height="55" ></iframe>
 </div>
 <div class="wrapper">
     <div class="sidebar">
         <div class="myinfo">
-            <iframe src = "../leftmenu/myinfo_p.html" width="100%" height="200"></iframe>
+            <iframe src = "../leftmenu/myinfo_p.jsp" width="100%" height="200"></iframe>
         </div>
         <div class="menubar">
-            <iframe src = "../leftmenu/notice_p.html" width="100%" height="700"></iframe>
+            <iframe src = "../leftmenu/notice_p.jsp" width="100%" height="100%"></iframe>
         </div>
     </div>
     
@@ -39,61 +39,61 @@
             <tbody style="border: 0;" >	
                 <tr>
                     <th class="nidx">10</th>
-                    <th class="title"><span class="new">new</span><a class="contents" href="noticeContents.html">[휴강][2023-11-06][고급프로그래밍 언어 및 실습]</a></th>
+                    <th class="title"><span class="new">new</span><a class="contents" href="noticeContents.jsp">[휴강][2023-11-06][고급프로그래밍 언어 및 실습]</a></th>
                     <th class="writeday">2023-11-04</th>
                     <th class="viewcnt">15</th>   
                 </tr>
                 <tr>
                     <th class="nidx">9</th>
-                    <th class="title"><span class="new">new</span><a class="contents" href="noticeContents.html">[보강][2023-11-05][고급프로그래밍 언어 및 실습]</a></th>
+                    <th class="title"><span class="new">new</span><a class="contents" href="noticeContents.jsp">[보강][2023-11-05][고급프로그래밍 언어 및 실습]</a></th>
                     <th class="writeday">2023-11-04</th>
             <th class="viewcnt">15</th>   
             </tr>
             <tr>
                 <th class="nidx">8</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[휴강][2023-11-11][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jsp">[휴강][2023-11-11][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-11-01</th>
                 <th class="viewcnt">13</th>   
             </tr>
             <tr>
                 <th class="nidx">7</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[보강][2023-11-01][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jsp">[보강][2023-11-01][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-11-01</th>
                 <th class="viewcnt">13</th>   
             </tr>
             <tr>
                 <th class="nidx">6</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[휴강][2023-11-13][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jspl">[휴강][2023-11-13][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-10-27</th>
                 <th class="viewcnt">12</th>   
             </tr>
             <tr>
                 <th class="nidx">5</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[휴강][2023-11-08][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jsp">[휴강][2023-11-08][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-10-27</th>
                 <th class="viewcnt">12</th>   
             </tr>
             <tr>
                 <th class="nidx">4</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[휴강][2023-11-04][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jsp">[휴강][2023-11-04][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-10-27</th>
                 <th class="viewcnt">12</th>   
             </tr>
             <tr>
                 <th class="nidx">3</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[휴강][2023-11-04][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jsp">[휴강][2023-11-04][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-10-27</th>
                 <th class="viewcnt">12</th>   
             </tr>
             <tr>
                 <th class="nidx">2</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[휴강][2023-11-07][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jsp">[휴강][2023-11-07][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-10-27</th>
                 <th class="viewcnt">12</th>   
             </tr>
             <tr>
                 <th class="nidx">1</th>
-                <th class="title"><a class="contents" href="noticeContents.html">[휴강][2023-11-06][시스템 소프트웨어 설계]</a></th>
+                <th class="title"><a class="contents" href="noticeContents.jsp">[휴강][2023-11-06][시스템 소프트웨어 설계]</a></th>
                 <th class="writeday">2023-10-27</th>
                 <th class="viewcnt">12</th>   
             </tr>
@@ -105,7 +105,7 @@
             <td style="width:700px"></td>
             <td>
                 <div class="writediv"> 
-                    <a class="noticewrite" href="noticewrite.html">
+                    <a class="noticewrite" href="noticewrite.jsp">
                         글쓰기
                     </a>
                 </div>

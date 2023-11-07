@@ -29,8 +29,10 @@ function login(){
     var value = document.querySelector('input[name="select"]:checked').value;
    // alert(value);
     if(value==='student'){
-        alert('학생 로그인 페이지이동');
-        location.href='./main/main_s.html';
+        out.println("<script>alert('student');</script>");
+        fm.action ="/member/studentLoginAction.jsp";  //처리하기위해 이동하는 주소
+	    fm.method = "post";  //이동하는 방식  get 노출시킴 post 감추어서 전달
+	    fm.submit();
     }else{
         alert('교수페이지 이동');
         location.href='./main/main_p.html';

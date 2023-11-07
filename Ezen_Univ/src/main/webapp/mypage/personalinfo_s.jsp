@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,24 +24,52 @@
         .contents{
             padding: 10px;
         }
-        
+        .contents .table{
+            margin: 10px;
+
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <iframe src = "../main/navigation_a.html" width = "100%" height="55" ></iframe>
+        <iframe src = "../main/navigation_s.jsp" width = "100%" height="55" ></iframe>
     </div>
     <div class="container">
         <div class="sidebar">
             <div class="myinfo">
-                <iframe src = "../leftmenu/myinfo_a.html" width="100%" height="100"></iframe>
+                <iframe src = "../leftmenu/myinfo_s.jsp" width="100%" height="200"></iframe>
             </div>
             <div class="menubar">
-                <iframe src = "../leftmenu/courseRegister_a.html" width="100%" height="100%"></iframe>
+                <iframe src = "../leftmenu/mypage_menu_s.jsp" width="100%" height="500"></iframe>
             </div>
         </div>
         <div class="contents">
-            힝..
+            <h3>학생정보</h3>
+            <table border=1 style="width:600px; text-align:center;">
+				<tr>
+				<tr>
+					<th>학번</th>
+					<td>20131105</td>
+					<th>이름</th>
+					<td>홍길동</td>
+				</tr>
+				<tr>
+					<th>학년</th>
+					<td>2</td>
+					<th>연락처</th>
+					<td>010-1234-1234</td>
+				</tr>
+				<tr>
+					<th>단과대학</th>
+					<td>공과대학</td>
+					<th>학과</th>
+					<td>정보통신공학과</td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td colspan='3'>ezen12@naver.com</td>
+				</tr>
+			</table>
         </div>
     </div>
 </body>

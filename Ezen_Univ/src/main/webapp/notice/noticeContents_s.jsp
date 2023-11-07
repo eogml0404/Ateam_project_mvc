@@ -71,15 +71,15 @@
 </head>
 <body>
     <div class="header">
-        <iframe src = "../main/navigation_s.html" width = "100%" height="55" ></iframe>
+        <iframe src = "../main/navigation_s.jsp" width = "100%" height="55" ></iframe>
     </div>
     <div class="container">
         <div class="sidebar">
             <div class="myinfo">
-                <iframe src = "../leftmenu/myinfo_s.html" width="100%" height="200"></iframe>
+                <iframe src = "../leftmenu/myinfo_s.jsp" width="100%" height="200"></iframe>
             </div>
             <div class="menubar">
-                <iframe src = "../leftmenu/notice_s.html" width="100%" height="700"></iframe>
+                <iframe src = "../leftmenu/notice_s.jsp" width="100%" height="100%"></iframe>
             </div>
         </div>
     <div class="contents">
@@ -98,7 +98,7 @@
         </tr>
         <tr>
             <td class="list">
-                <a class="link" href="noticeList_s.html">목록</a>
+                <a class="link" href="noticeList_s.jsp">목록</a>
             </td>
         </tr> 
         </table>

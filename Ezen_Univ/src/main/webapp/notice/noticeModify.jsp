@@ -77,15 +77,15 @@
 </head>
 <body>
     <div class="header">
-        <iframe src = "../main/navigation_p.html" width = "100%" height="55" ></iframe>
+        <iframe src = "../main/navigation_p.jsp" width = "100%" height="55" ></iframe>
     </div>
     <div class="container">
         <div class="sidebar">
             <div class="myinfo">
-                <iframe src = "../leftmenu/myinfo_p.html" width="100%" height="200"></iframe>
+                <iframe src = "../leftmenu/myinfo_p.jsp" width="100%" height="200"></iframe>
             </div>
             <div class="menubar">
-                <iframe src = "../leftmenu/notice_p.html" width="100%" height="700"></iframe>
+                <iframe src = "../leftmenu/notice_p.jsp" width="100%" height="100%"></iframe>
             </div>
         </div> 
     <div class="contents">
@@ -118,7 +118,7 @@
             </tr>
             <tr>
                 <td class="list1">
-                    <a class="list" href="noticeList_p.html">목록</a>
+                    <a class="list" href="noticeList_p.jsp">목록</a>
                     <button type="submit" class="writebtn">글쓰기</button> 
                 </td>
             </tr> 

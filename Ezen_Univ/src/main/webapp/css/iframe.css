@@ -2,14 +2,11 @@
     margin: 0;
     padding: 0;           
 }
-iframe{
-    display: block;
-}
 .header{
-    background-color: bisque;
     height: 10%;
 }
 iframe{
+    display: block;
     border: 0;
     margin: 0;
 }
@@ -17,7 +14,7 @@ iframe{
     display: inline;
     width: 10%;
     height: 100%;
-    background-color: #DEDFEA;
+    background: #DEDFEA;
 }
 .myinfo{
     display: block;
@@ -29,7 +26,9 @@ iframe{
     height: 100%;
 }
 .contents{
-
     display: inline;
     width: 400%;
+}
+.container{
+    height: 100vh;
 }

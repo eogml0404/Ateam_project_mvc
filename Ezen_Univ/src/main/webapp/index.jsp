@@ -15,7 +15,7 @@
 </head>
 <body>	
 	<header>
-		<h2 class="logo"><a href="index.html">Ezen_Univ</a></h2>
+		<h2 class="logo"><a href="index.jsp">Ezen_Univ</a></h2>
 		<nav class="navigation">
 			<a href="https://www.cubeitac.com/">HOME</a>
 			<a href="#">INFO</a>
@@ -32,7 +32,7 @@
 		<span class="icon-close"><ion-icon name="close"></ion-icon></span>
 		<div class="form-box login">
 			<h2>Login</h2>
-			<form action="#">
+			<form name="frm action="" method="" value=""">
 				<div class="input-box">
 					<span class="icon"><ion-icon name="person"></ion-icon></span>
 					<input type="text" name="memberId" id="memberId" required>
@@ -45,7 +45,7 @@
 				</div>
 				<div class="remember-forgot">
 					
-					<button onclick="window.open('member/searchInfo.html','window_name','width=600,height=700,location=no,status=no,scrollbars=yes');">ID | password 찾기</button>
+					<button onclick="window.open('member/searchInfo.jsp','window_name','width=600,height=700,location=no,status=no,scrollbars=yes');">ID | password 찾기</button>
 				</div>
 				<div class="choose">
 					<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label> | 

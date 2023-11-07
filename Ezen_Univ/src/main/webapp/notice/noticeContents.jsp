@@ -7,23 +7,17 @@
 <title></title>
 <link rel="stylesheet" href="../css/iframe.css">
 <style>
-.subject {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-.writebtn{
+
+.deletebtn, .writebtn{
     background-color: black;
     border-radius: 5px;
     color: whitesmoke;
-    text-decoration: none; 
-}
-.list1{
+    text-decoration: none;
+}   
+.list{
     display: flex;
     justify-content: space-between;
-    align-items: center;
- 
+    align-items: center; 
 }
 .sidebar{
     width: 50%;
@@ -34,17 +28,18 @@
 .menubar{
     width: 100%;
 }
-.container{
-    display: flex;
-} 
-.list{
+.link{
     background-color: black;
     border-radius: 5px;
     color: whitesmoke;
     text-decoration: none;
+    padding: 3px;
+    font-size: 0.85em;  
 }
-    
-.text-area{
+.container{
+    display: flex;
+} 
+.text-box{
     width: 100%;
     border: 2px solid black;
     height: 500px;
@@ -55,25 +50,24 @@
     width: 80%;
 }
 
-.contents{
+.contents {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: -70px;        
+    align-items: center; 
+    margin-left: -70px;
 }
-
 .subject{
     display: flex;
     border-bottom: 3px solid black;
     border-top: 3px solid black;
 }
 
-.subject td{ 
+.subject td{
+    text-align: center;
     margin: 5px;
 }
 
 </style>
-
 </head>
 <body>
     <div class="header">
@@ -87,43 +81,33 @@
             <div class="menubar">
                 <iframe src = "../leftmenu/notice_p.jsp" width="100%" height="100%"></iframe>
             </div>
-        </div> 
+        </div>
     <div class="contents">
-        <h1>휴보강 공지등록</h1>
+        <h1>휴보강 공지사항</h1>
         <table class="noticewrite">
         <tr class="subject">
             <td>제목</td>
-            <td>
-            <select name="noticetype">
-                <option value="skip">휴강</option>
-                <option value="sup">보강</option>
-            </select>
-            </td>
-            <td>
-                <select name="coursetype">
-                    <option value="cidx1">고급프로그래밍</option>
-                    <option value="cidx2">사물인터넷통신</option>
-                    <option value="cidx3">시스템소프트웨어설계</option>
-                </select>
-            </td>
-            <td>
-                <input type="date" name="when">
+            <td>[휴강][2023-11-06][고급프로그래밍 언어 및 실습]
+            </td>        
+        </tr>
+        <tr>
+            <td class="text-box">
+                공지사항내용입니다.<br>
+                휴강이라고
             </td>
         </tr>
         <tr>
-            <td>
-                <textarea class="text-area"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td class="list1">
-                <a class="list" href="noticeList_p.jsp">목록</a>
+            <td class="list">
+                <a class="link" href="noticeList_p.jsp">목록</a>
             
-                <button type="submit" class="writebtn">글쓰기</button> 
+                <div>
+                <a class="link" href="noticemodify.jsp">수정</a>
+                <button type="submit" class="deletebtn">삭제</button> 
+                </div>
             </td>
         </tr> 
         </table>
-        </div>
     </div>
+</div>
 </body>
 </html>
