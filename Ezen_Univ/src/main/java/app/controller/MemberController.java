@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import app.dao.MemberDao;
 import app.domain.MemberVo;
 
-//HttpServlet¸¦ »ó¼Ó¹Ş¾Ò±â ¶§¹®¿¡ Å¬·¡½º°¡ ÀÎÅÍ³İÆäÀÌÁö°¡ µÈ´Ù.
+//HttpServletë¥¼ ìƒì†ë°›ì•˜ê¸° ë•Œë¬¸ì— í´ë˜ìŠ¤ê°€ ì¸í„°ë„·í˜ì´ì§€ê°€ ëœë‹¤.
 @WebServlet("/MemberController")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,22 +35,22 @@ public class MemberController extends HttpServlet {
 			request.setAttribute("list", list);
 			
 			String path = "/member/memberList.jsp";
-			//È­¸é¿ëµµÀÇ ÁÖ¼Ò´Â forward·Î Åä½ºÇØ¼­ ÇØ´ç Âğ ÁÖ¼Ò·Î º¸³½´Ù.
+			//í™”ë©´ìš©ë„ì˜ ì£¼ì†ŒëŠ” forwardë¡œ í† ìŠ¤í•´ì„œ í•´ë‹¹ ì° ì£¼ì†Œë¡œ ë³´ë‚¸ë‹¤.
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 			
-		} else if(location.equals("memberJoin.do")) {
+		} else if(location.equals("memberJoin.jsp")) {
 			
 			String path = "/member/memberJoin.jsp";
-			//È­¸é¿ëµµÀÇ ÁÖ¼Ò´Â forward·Î Åä½ºÇØ¼­ ÇØ´ç Âğ ÁÖ¼Ò·Î º¸³½´Ù.
+			//í™”ë©´ìš©ë„ì˜ ì£¼ì†ŒëŠ” forwardë¡œ í† ìŠ¤í•´ì„œ í•´ë‹¹ ì° ì£¼ì†Œë¡œ ë³´ë‚¸ë‹¤.
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 			
 		} else if(location.equals("memberJoinAction.do")) {
 			
 			
-			//µ¥ÀÌÅÍ¸¦ ³Ñ°ÜÁÖ¸é ¿äÃ»°´Ã¼´Â ±× °ªÀ» ¹Ş¾Æ¼­ ³Ñ¾î¿Â ¸Å°³º¯¼ö¿¡ ´ã±ä °ªÀ»
-			//²¨³»¼­ »õ·Î¿î º¯¼ö¿¡ ´ã´Â´Ù
+			//ë°ì´í„°ë¥¼ ë„˜ê²¨ì£¼ë©´ ìš”ì²­ê°ì²´ëŠ” ê·¸ ê°’ì„ ë°›ì•„ì„œ ë„˜ì–´ì˜¨ ë§¤ê°œë³€ìˆ˜ì— ë‹´ê¸´ ê°’ì„
+			//êº¼ë‚´ì„œ ìƒˆë¡œìš´ ë³€ìˆ˜ì— ë‹´ëŠ”ë‹¤
 			String memberId = request.getParameter("memberId");
 			String memberName = request.getParameter("memberName");
 			String memberPwd = request.getParameter("memberPwd");
@@ -67,17 +67,17 @@ public class MemberController extends HttpServlet {
 				str += memberHobby[i];
 				str += ", ";
 			}
-			str = str.substring(0, str.length()-2); //¸¶Áö¸· ", " Áö¿ì±â
+			str = str.substring(0, str.length()-2); //ë§ˆì§€ë§‰ ", " ì§€ìš°ê¸°
 
 
-			//Äõ¸®¸¦ ½ÇÇàÇÒ °´Ã¼¸¦ »ı¼ºÇØ¼­
-			//DB¿¡ ÀÔ·ÂÇÑ´Ù
+			//ì¿¼ë¦¬ë¥¼ ì‹¤í–‰í•  ê°ì²´ë¥¼ ìƒì„±í•´ì„œ
+			//DBì— ì…ë ¥í•œë‹¤
 
 
 			String memberBirth=memberYear+memberMonth+memberDay;
 
-			//Äõ¸®¸¦ ½ÇÇà½ÃÅ°´Â °´Ã¼¹İÈ¯ »ç¿ë
-			//stmt °´Ã¼ »ç¿ë
+			//ì¿¼ë¦¬ë¥¼ ì‹¤í–‰ì‹œí‚¤ëŠ” ê°ì²´ë°˜í™˜ ì‚¬ìš©
+			//stmt ê°ì²´ ì‚¬ìš©
 			//Statement stmt = conn.createStatement();
 
 			/* String new_index_q = "SELECT MAX(MIDX) FROM MEMBER0803";
@@ -86,19 +86,19 @@ public class MemberController extends HttpServlet {
 			while(new_index.next()) {
 				index_num = new_index.getInt(1) +1;
 			} 
-			-> ½ÃÄö½º ¾Ë±â ÀüÀÇ ÄÚµå*/
+			-> ì‹œí€€ìŠ¤ ì•Œê¸° ì „ì˜ ì½”ë“œ*/
 			MemberDao md = new MemberDao();
 			int exec = md.memberInsert(memberId, memberPwd, memberName, memberBirth, memberGender, memberPhone, memberEmail, memberAddr, str);
 
 			PrintWriter out = response.getWriter();
-			//boolean tf = stmt.execute(sql);//ÇØ´ç ±¸¹®(Äõ¸®)¸¦ ½ÇÇà½ÃÅ²´Ù
+			//boolean tf = stmt.execute(sql);//í•´ë‹¹ êµ¬ë¬¸(ì¿¼ë¦¬)ë¥¼ ì‹¤í–‰ì‹œí‚¨ë‹¤
 
 			//System.out.println(sql);
 			//System.out.println(tf);
 			if(exec == 1){
-				//ÀÚµ¿ ÀÌµ¿ ¸Ş¼Òµå
+				//ìë™ ì´ë™ ë©”ì†Œë“œ
 				//response.sendRedirect(request.getContextPath()+"/member/memberList.html");
-				out.println("<script>alert(\"È¸¿ø°¡ÀÔµÇ¾ú½À´Ï´Ù.\");"
+				out.println("<script>alert(\"íšŒì›ê°€ì…ë˜ì—ˆìŠµë‹ˆë‹¤.\");"
 				+"document.location.href='"+request.getContextPath()+"/member/memberList.do'</script>");
 			}else{
 				out.println("<script>history.back();</script>");
@@ -106,41 +106,67 @@ public class MemberController extends HttpServlet {
 			
 		}else if(location.equals("memberLogin.do")) {
 			String path = "/member/memberLogin.jsp";
-			//È­¸é¿ëµµÀÇ ÁÖ¼Ò´Â forward·Î Åä½ºÇØ¼­ ÇØ´ç Âğ ÁÖ¼Ò·Î º¸³½´Ù.
+			//í™”ë©´ìš©ë„ì˜ ì£¼ì†ŒëŠ” forwardë¡œ í† ìŠ¤í•´ì„œ í•´ë‹¹ ì° ì£¼ì†Œë¡œ ë³´ë‚¸ë‹¤.
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 		}else if(location.equals("memberLogout.do")) {
 			HttpSession session = request.getSession();
 			session.removeAttribute("memberId");
 			session.removeAttribute("midx");
-			session.invalidate(); //ÃÊ±âÈ­
+			session.invalidate(); //ì´ˆê¸°í™”
 			
 			response.sendRedirect(request.getContextPath()+"/");
 			
-		}else if(location.equals("memberLoginAction.do")) {
+		}else if(location.equals("studentLoginAction.do")) {
 			
-			String memberId = request.getParameter("memberId");
-			String memberPwd = request.getParameter("memberPwd");
+			String s_id = request.getParameter("memberId");
+			String s_pwd = request.getParameter("memberPwd");
 			
 			
 			MemberDao md = new MemberDao();
 			int midx = 0;
-			midx = md.memberLoginCheck(memberId, memberPwd);
-			if (midx!=0){ //¾ÆÀÌµğºñ¹ø ÀÏÄ¡
-				//¼¼¼Ç¿¡ È¸¿ø ¾ÆÀÌµğ¸¦ ´ã´Â´Ù
+			midx = md.studentLoginCheck(s_id, s_pwd);
+			if (midx!=0){ //ì•„ì´ë””ë¹„ë²ˆ ì¼ì¹˜
+				//ì„¸ì…˜ì— íšŒì› ì•„ì´ë””ë¥¼ ë‹´ëŠ”ë‹¤
 				HttpSession session = request.getSession();
-				session.setAttribute("memberId", memberId);
+				session.setAttribute("memberId", s_id);
 				session.setAttribute("midx", midx);
 				
-				response.sendRedirect(request.getContextPath()+"/index.jsp");
+				response.sendRedirect(request.getContextPath()+"/main/main_s.jsp");
 				
-			}else{//¾ÆÀÌµğ ºñ¹ø ºÒÀÏÄ¡
+			}else{//ì•„ì´ë”” ë¹„ë²ˆ ë¶ˆì¼ì¹˜
 				response.setCharacterEncoding("UTF-8");
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter out = response.getWriter();
-				out.println("<script language='javascript' type='text/javascript'> alert('·Î±×ÀÎ ½ÇÆĞ'); </script>");
-				out.println("<script>location.href='memberLogin.do';</script>");
-				//response.sendRedirect("./memberLogin.do");
+				out.println("<script language='javascript' type='text/javascript'> alert('ë¡œê·¸ì¸ ì‹¤íŒ¨'); </script>");
+				out.println("<script>location.href='../index.jsp';</script>");
+				//response.sendRedirect("./main/main_s.do");
+			}
+			
+		}else if(location.equals("professorLoginAction.do")) {
+			
+			String p_id = request.getParameter("memberId");
+			String p_pwd = request.getParameter("memberPwd");
+			
+			
+			MemberDao md = new MemberDao();
+			int pidx = 0;
+			pidx = md.professorLoginCheck(p_id, p_pwd);
+			if (pidx!=0){ //ì•„ì´ë””ë¹„ë²ˆ ì¼ì¹˜
+				//ì„¸ì…˜ì— íšŒì› ì•„ì´ë””ë¥¼ ë‹´ëŠ”ë‹¤
+				HttpSession session = request.getSession();
+				session.setAttribute("p_id", p_id);
+				session.setAttribute("pidx", pidx);
+				
+				response.sendRedirect(request.getContextPath()+"/main/main_p.jsp");
+				
+			}else{//ì•„ì´ë”” ë¹„ë²ˆ ë¶ˆì¼ì¹˜
+				response.setCharacterEncoding("UTF-8");
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script language='javascript' type='text/javascript'> alert('ë¡œê·¸ì¸ ì‹¤íŒ¨'); </script>");
+				out.println("<script>location.href='../index.jsp';</script>");
+				//response.sendRedirect("./main/main_s.do");
 			}
 			
 		}

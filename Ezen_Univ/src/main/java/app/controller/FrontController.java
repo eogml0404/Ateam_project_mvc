@@ -1,7 +1,6 @@
 package app.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +16,7 @@ public class FrontController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		//ø©±‚ø°º≠ æÓ¥¿ ƒ¡∆Æ∑—∑Ø∑Œ ∫∏≥æ¡ˆ ∫–±‚«—¥Ÿ
+		//Ïó¨Í∏∞ÏóêÏÑú Ïñ¥Îäê Ïª®Ìä∏Î°§Îü¨Î°ú Î≥¥ÎÇºÏßÄ Î∂ÑÍ∏∞ÌïúÎã§
 		
 		String url = request.getRequestURI();
 		int length = request.getContextPath().length();
@@ -28,15 +27,15 @@ public class FrontController extends HttpServlet {
 		String[] ary = command.split("/");
 		String str = ary[1];
 		String location = ary[2];
-		
-		 if(str.equals("member")) { MemberController mc = new
-		 MemberController(location); mc.doGet(request, response); 
-		 }
-		/* else if(str.equals("board")) { BoardController bc = new BoardController(location);
-		 * bc.doGet(request, response); }else if(str.equals("comment")) {
-		 * CommentController cc = new CommentController(location); cc.doGet(request,
-		 * response); }
-		 */
+		if(str.equals("member")) {
+			MemberController mc = new MemberController(location);
+			mc.doGet(request, response);
+		} /*
+			 * else if(str.equals("board")) { BoardController bc = new
+			 * BoardController(location); bc.doGet(request, response); }else
+			 * if(str.equals("comment")) { CommentController cc = new
+			 * CommentController(location); cc.doGet(request, response); }
+			 */
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

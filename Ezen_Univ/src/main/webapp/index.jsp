@@ -13,6 +13,45 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
+<script>
+function login(){
+    var fm = document.frm;
+	alert(fm);
+    var value = document.querySelector('input[name="select"]:checked').value;
+   // alert(value);
+    if(value==='student'){
+        fm.action ="<%=request.getContextPath()%>/member/studentLoginAction.do"; 
+	    fm.method = "post"; 
+	    fm.submit();
+	    return;
+    }else{
+    	fm.action ="<%=request.getContextPath()%>/member/professorLoginAction.do"; 
+	    fm.method = "post"; 
+	    fm.submit();
+	    return;
+    }
+
+    var radios = document.getElementsByName('select');
+    <%-- for(var radio of radios){
+        if(radio.checked){
+            var checked_select = radio.value;
+            // alert(checked_select);
+            if(checked_select === "student"){
+                fm.action ="<%=request.getContextPath()%>/member/memberLoginAction.do";  //처리하기위해 이동하는 주소
+	            fm.method = "post";  //이동하는 방식  get 노출시킴 post 감추어서 전달
+	            fm.submit();
+	            return;
+                location.href='./main/main_s.html';
+                break;
+            }else{
+                location.href='./main/main_p.html';
+                break;
+            }
+        }
+    } --%>
+    
+}
+</script>
 <body>	
 	<header>
 		<h2 class="logo"><a href="index.jsp">Ezen_Univ</a></h2>
@@ -32,7 +71,7 @@
 		<span class="icon-close"><ion-icon name="close"></ion-icon></span>
 		<div class="form-box login">
 			<h2>Login</h2>
-			<form name="frm action="" method="" value=""">
+			<form name="frm" action="" method="" value=""">
 				<div class="input-box">
 					<span class="icon"><ion-icon name="person"></ion-icon></span>
 					<input type="text" name="memberId" id="memberId" required>

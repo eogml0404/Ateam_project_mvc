@@ -29,13 +29,13 @@
 	</servlet-mapping>
 
 
-<!--   <servlet>
+  <servlet>
   <servlet-name>con</servlet-name>
   <servlet-class>app.controller.FrontController</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>con</servlet-name>
   <url-pattern>*.do</url-pattern>
-  </servlet-mapping> -->
+  </servlet-mapping>
 
 </web-app>

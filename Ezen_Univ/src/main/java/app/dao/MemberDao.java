@@ -10,11 +10,11 @@ import app.domain.MemberVo;
 
 public class MemberDao {
 	
-	//¸â¹öº¯¼ö ¼±¾ğÇÏ°í Àü¿ªÀ¸·Î È°¿ëÇÏ·Á°í ÇÑ´Ù.
+	//ë©¤ë²„ë³€ìˆ˜ ì„ ì–¸í•˜ê³  ì „ì—­ìœ¼ë¡œ í™œìš©í•˜ë ¤ê³  í•œë‹¤.
 	
-	private Connection conn; //¸â¹ö º¯¼ö´Â ¼±¾ğ¸¸ÇØµµ ÀÚµ¿ÃÊ±âÈ­µÊ
+	private Connection conn; //ë©¤ë²„ ë³€ìˆ˜ëŠ” ì„ ì–¸ë§Œí•´ë„ ìë™ì´ˆê¸°í™”ë¨
 	private PreparedStatement pstmt;
-	//ºÎºĞ¸¸ »ç¿ëÇÏ´Â º¯¼ö´Â Àü¿ªÀ¸·Î ¼±¾ğÇÏÁö X
+	//ë¶€ë¶„ë§Œ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ëŠ” ì „ì—­ìœ¼ë¡œ ì„ ì–¸í•˜ì§€ X
 	
 	
 	public MemberDao() {
@@ -52,24 +52,24 @@ public class MemberDao {
 	}
 
 	public ArrayList<MemberVo> memberSelectAll(){
-		//¹«ÇÑ¹è¿­Å¬·¡½º °´Ã¼»ı¼ºÇØ¼­ µ¥ÀÌÅÍ ´ãÀ» ÁØºñ¸¦ ÇÑ´Ù.
+		//ë¬´í•œë°°ì—´í´ë˜ìŠ¤ ê°ì²´ìƒì„±í•´ì„œ ë°ì´í„° ë‹´ì„ ì¤€ë¹„ë¥¼ í•œë‹¤.
 		ArrayList<MemberVo> alist = new ArrayList<MemberVo>();
 		ResultSet rs;
 		String sql="select midx, membername, memberid, date_format(writeday,\"%Y-%m-%d\") as writeday from member0803 where delyn='N' order by midx desc";
 		try{
-			//±¸¹®(Äõ¸®)°´Ã¼
+			//êµ¬ë¬¸(ì¿¼ë¦¬)ê°ì²´
 			pstmt = conn.prepareStatement(sql);
-			//DB¿¡ ÀÖ´Â °ªÀ» ´ã¾Æ¿À´Â Àü¿ë°´Ã¼
+			//DBì— ìˆëŠ” ê°’ì„ ë‹´ì•„ì˜¤ëŠ” ì „ìš©ê°ì²´
 			rs = pstmt.executeQuery();
-			//rs.next() -> ´ÙÀ½°ªÀÌ ÀÖ´ÂÁö È®ÀÎÇÏ´Â ¸Ş¼­µå(ÀÖÀ¸¸é true, ¾øÀ¸¸é false)
+			//rs.next() -> ë‹¤ìŒê°’ì´ ìˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ë©”ì„œë“œ(ìˆìœ¼ë©´ true, ì—†ìœ¼ë©´ false)
 			while(rs.next()){
 				MemberVo mv = new MemberVo();
-				//rs¿¡¼­ midx°ª ²¨³»¼­ mv¿¡ ¿Å°Ü´ã´Â´Ù.
-				mv.setMidx( rs.getInt("midx") ); 
-				mv.setMemberId( rs.getString("memberid") );
-				mv.setMemberName( rs.getString("membername"));
-				mv.setWriteday( rs.getString("writeday"));
-				alist.add(mv);
+				//rsì—ì„œ midxê°’ êº¼ë‚´ì„œ mvì— ì˜®ê²¨ë‹´ëŠ”ë‹¤.
+				/*
+				 * mv.setMidx( rs.getInt("midx") ); mv.setMemberId( rs.getString("memberid") );
+				 * mv.setMemberName( rs.getString("membername")); mv.setWriteday(
+				 * rs.getString("writeday")); alist.add(mv);
+				 */
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -78,7 +78,7 @@ public class MemberDao {
 	}
 
 	public int memberIdCheck(String memberId){
-		int value = 0; //°á°ú°ªÀÌ 0ÀÎÁö ¾Æ´ÑÁö
+		int value = 0; //ê²°ê³¼ê°’ì´ 0ì¸ì§€ ì•„ë‹Œì§€
 		String sql = "select count(*) as cnt from member0803 where memberid=?";
 		ResultSet rs = null;
 		try{
@@ -108,8 +108,50 @@ public class MemberDao {
 			
 			if(rs.next()){
 				value = rs.getInt("midx");
-				//value°¡ 0ÀÌ¸é ÀÏÄ¡ÇÏÁö ¾Ê´Â´Ù
-				//value°¡ 1ÀÌ¸é ÀÏÄ¡ÇÑ´Ù
+				//valueê°€ 0ì´ë©´ ì¼ì¹˜í•˜ì§€ ì•ŠëŠ”ë‹¤
+				//valueê°€ 1ì´ë©´ ì¼ì¹˜í•œë‹¤
+				
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return value;
+	}
+	public int studentLoginCheck(String s_id, String s_pwd){
+		int value=0;
+		String sql = "select sidx from student where s_id=? and s_pwd=?";
+		ResultSet rs = null;
+		try{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,s_id);
+			pstmt.setString(2,s_pwd);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				value = rs.getInt("sidx");
+				//valueê°€ 0ì´ë©´ ì¼ì¹˜í•˜ì§€ ì•ŠëŠ”ë‹¤
+				//valueê°€ 1ì´ë©´ ì¼ì¹˜í•œë‹¤
+				
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return value;
+	}
+	public int professorLoginCheck(String p_id, String p_pwd){
+		int value=0;
+		String sql = "select pidx from professor where p_id=? and p_pwd=?";
+		ResultSet rs = null;
+		try{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,p_id);
+			pstmt.setString(2,p_pwd);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				value = rs.getInt("pidx");
+				//valueê°€ 0ì´ë©´ ì¼ì¹˜í•˜ì§€ ì•ŠëŠ”ë‹¤
+				//valueê°€ 1ì´ë©´ ì¼ì¹˜í•œë‹¤
 				
 			}
 		}catch(Exception e){
