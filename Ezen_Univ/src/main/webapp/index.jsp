@@ -16,7 +16,17 @@
 <script>
 function login(){
     var fm = document.frm;
-	alert(fm);
+    
+    if(fm.memberId.value ==""){
+		alert("아이디를 입력하세요");
+		fm.memberId.focus();
+		return;
+	} else if(fm.memberPwd.value ==""){
+		alert("비밀번호를 입력하세요");
+		fm.memberPwd.focus();
+		return;
+	}
+    
     var value = document.querySelector('input[name="select"]:checked').value;
    // alert(value);
     if(value==='student'){
@@ -34,7 +44,48 @@ function login(){
 
 function join(){
 	var fm = document.joinfrm;
-	alert(fm);
+
+	if(fm.memberId.value ==""){
+		alert("아이디를 입력하세요");
+		fm.memberId.focus();
+		return;
+	}else if(fm.memberPwd.value ==""){
+		alert("비밀번호를 입력하세요");
+		fm.memberPwd.focus();
+		return;
+	}else if(!fm.memberPwd.value.equals(fm.memberPwd2.value)){
+		alert("비밀번호가 일치하지 않습니다");
+		fm.memberPwd2.value="";
+		fm.memberPwd2.focus();
+		return;
+	}else if(fm.memberName.value==""){
+		alert("이름을 입력해주세요");
+		fm.memberName.focus();
+		return;
+	}else if(fm.memberPhone.value==""){
+		alert("휴대폰번호를 입력해주세요");
+		fm.memberPhone.focus();
+		return;
+	}else if(fm.memberEmail.value==""){
+		alert("이메일을 입력해주세요");
+		fm.memberEmail.focus();
+		return;
+	}else if (!CheckEmail(fm.memberEmail.value)){
+		alert("이메일 형식이 유효하지 않습니다.");
+		fm.memberEmail.value="";
+		fm.memberEmail.focus();
+		return;	
+	}else if(fm.memberBirth.value==""){
+		alert("생년월일을 입력해주세요");
+		fm.memberBirth.focus();
+		return;
+	}else if(fm.memberMajor.value==""){
+		alert("전공을 선택해주세요");
+		fm.memberMajor.focus();
+		return;
+	}
+	
+	
 	var value = document.querySelector('input[name="selectjoin"]:checked').value;
 	
 	if(value==='student'){
@@ -49,6 +100,17 @@ function join(){
 	    return;
     }
 }
+
+function CheckEmail(str){ 
+	//정규표현식 - 일정한 패턴에따라 해당되는 위치에 해당하는 값의 범위를 지정
+     var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+     if(!reg_email.test(str)) { 
+          return false;  
+     }  
+     else {
+          return true; 
+     } 
+} 
 </script>
 <body>	
 	<header>
