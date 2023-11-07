@@ -30,7 +30,7 @@ public class MemberDao {
 			String memberHobby){
 		int exec = 0;
 
-		String sql = "insert into member0803(memberid,memberpwd,membername,memberbirth,membergender,memberphone,memberemail,memberaddr,memberhobby)"+
+		String sql = "insert into student(s_id, s_pwd, s_name, s_phone, s_email, s_birth, s_major, s_no)"+
 				" values(?,?,?,?,?,?,?,?,?)";
 				try{
 				pstmt = conn.prepareStatement(sql);
@@ -42,11 +42,58 @@ public class MemberDao {
 				pstmt.setString(6,memberPhone);
 				pstmt.setString(7,memberEmail);
 				pstmt.setString(8,memberAddr);
-				pstmt.setString(9,memberHobby);
+
 				exec = pstmt.executeUpdate();
 				} catch(Exception e){
 					e.printStackTrace();
 				}
+		
+		return exec;
+	}
+	public int studentInsert(String s_id, String s_pwd, String s_name, String s_phone, String s_email, int s_birth, String s_major) {
+		
+		int exec = 0;
+
+		String sql = "insert into student(s_id, s_pwd, s_name, s_phone, s_email, s_birth, s_major, s_yn)"+
+				" values(?,?,?,?,?,?,?,'N')";
+				try{
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1,s_id);
+				pstmt.setString(2,s_pwd);
+				pstmt.setString(3,s_name);
+				pstmt.setString(4,s_phone);
+				pstmt.setString(5,s_email);
+				pstmt.setInt(6,s_birth);
+				pstmt.setString(7,s_major);
+				
+				exec = pstmt.executeUpdate();
+				} catch(Exception e){
+					e.printStackTrace();
+				}
+		
+		return exec;
+	}
+	public int professorInsert(String p_id, String p_pwd, String p_name, String p_phone, String p_email, int p_birth, String p_major) {
+		
+		int exec = 0;
+		
+		String sql = "insert into professor(p_id, p_pwd, p_name, p_phone, p_email, p_birth, p_major, p_yn)"+
+				" values(?,?,?,?,?,?,?,'N')";
+		try{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,p_id);
+			pstmt.setString(2,p_pwd);
+			pstmt.setString(3,p_name);
+			pstmt.setString(4,p_phone);
+			pstmt.setString(5,p_email);
+			pstmt.setInt(6,p_birth);
+			pstmt.setString(7,p_major);
+
+			
+			exec = pstmt.executeUpdate();
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 		
 		return exec;
 	}

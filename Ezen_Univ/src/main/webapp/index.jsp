@@ -29,27 +29,25 @@ function login(){
 	    fm.method = "post"; 
 	    fm.submit();
 	    return;
-    }
+    }  
+}
 
-    var radios = document.getElementsByName('select');
-    <%-- for(var radio of radios){
-        if(radio.checked){
-            var checked_select = radio.value;
-            // alert(checked_select);
-            if(checked_select === "student"){
-                fm.action ="<%=request.getContextPath()%>/member/memberLoginAction.do";  //처리하기위해 이동하는 주소
-	            fm.method = "post";  //이동하는 방식  get 노출시킴 post 감추어서 전달
-	            fm.submit();
-	            return;
-                location.href='./main/main_s.html';
-                break;
-            }else{
-                location.href='./main/main_p.html';
-                break;
-            }
-        }
-    } --%>
-    
+function join(){
+	var fm = document.joinfrm;
+	alert(fm);
+	var value = document.querySelector('input[name="selectjoin"]:checked').value;
+	
+	if(value==='student'){
+        fm.action ="<%=request.getContextPath()%>/member/studentJoinAction.do"; 
+	    fm.method = "post"; 
+	    fm.submit();
+	    return;
+    }else{
+    	fm.action ="<%=request.getContextPath()%>/member/professorJoinAction.do"; 
+	    fm.method = "post"; 
+	    fm.submit();
+	    return;
+    }
 }
 </script>
 <body>	
@@ -99,45 +97,45 @@ function login(){
 		
 		<div class="form-box register">
 			<h2 style="font-size: 30px;">Registration</h2>
-			<form action="#">
+			<form name="joinfrm" action="">
 				<div class="input-box">
 					<span class="icon"><ion-icon name="person"></ion-icon></span>
-					<input type="text" required>
+					<input type="text" name="memberId" id="memberId" required>
 					<label>ID</label>
 				</div>
 				<div class="input-box">
 					<span class="icon"><ion-icon name="key"></ion-icon></span>
-					<input type="password" required>
+					<input type="password" name="memberPwd" id="memberPwd" required>
 					<label>password</label>
 				</div>
 				<div class="input-box">
 					<span class="icon"><ion-icon name="key"></ion-icon></span>
-					<input type="password" required>
+					<input type="password" name="memberPwd2" id="memberPwd2" required>
 					<label>password 확인</label>
 				</div>
 				<div class="input-box">
 					<span class="icon"><ion-icon name="pricetag"></ion-icon></span>
-					<input type="text" required>
+					<input type="text" name="memberName" id="memberName" required>
 					<label>이름<span>(홍길동)</span></label>
 				</div>
 				<div class="input-box">
 					<span class="icon"><ion-icon name="call"></ion-icon></span>
-					<input type="tel" required>
+					<input type="tel" name="memberPhone" id="memberPhone" required>
 					<label>연락처<span>(01011112222)</span></label>
 				</div>
 				<div class="input-box">
 					<span class="icon"><ion-icon name="mail"></ion-icon></span>
-					<input type="email" required>
+					<input type="email" name="memberEmail" id="memberEmail" required>
 					<label>이메일<span>(ezen@ezen.com)</span></label>
 				</div>
 				<div class="input-box birth">
 					<span class="icon"><ion-icon name="calendar-number"></ion-icon></span>
-					<input type="text" required>
+					<input type="text" name="memberBirth" id="memberBirth" required>
 					<label>생년월일<span>(19941024)</span></label>
 				</div>
 				<div class="input-box birth">
 					<span class="icon"><ion-icon name="school"></ion-icon></span>
-					<input type="text" list="depList" required>
+					<input type="text" list="depList" name="memberMajor" id="memberMajor" required>
 					<datalist id="depList" name="country" size="50" autocomplete="off">
 						<option value="정보통신공학과"></option>
 						<option value="전기공학과"></option>
@@ -146,11 +144,11 @@ function login(){
 					</datalist>
 					<label class="choosemajor">학과</label>
 				</div>
-				<div class="choose">
-					<input type="radio" id="select_stu" name="select" value="student" checked><label for="select_stu">student</label> | 
-					<input type="radio" id="select_pro" name="select" value="professor"><label for="select_pro">professor</label>
+				<div class="choosejoin">
+					<input type="radio" id="join_select_stu" name="selectjoin" value="student" checked><label for="join_select_stu">student</label> | 
+					<input type="radio" id="join_select_pro" name="selectjoin" value="professor"><label for="join_select_pro">professor</label>
 				</div>
-				<button type="submit" class="btn">회원가입</button>
+				<button type="submit" class="btn" onclick="join()">회원가입</button>
 				<div class="login-register">
 					<p><a href="#" class="login-link">LOGIN</a></p>
 				</div>

@@ -228,6 +228,7 @@ header{
     line-height: 24px;
     font-weight:bold;
 	padding-bottom: 0px;
+	color: black;
 }
 .choose input[type=radio]:checked+label{
     color: blue;
@@ -277,4 +278,24 @@ header{
 }
 .login-register a:hover{
 	text-decoration: underline;
+}
+.choosejoin{
+	font-size: 17px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.choosejoin input[type=radio]{
+    display: none;
+}
+.choosejoin input[type=radio]+label{
+    cursor: pointer;
+    border: none;
+    line-height: 24px;
+    font-weight:bold;
+	padding-bottom: 0px;
+	color: black;
+}
+.choosejoin input[type=radio]:checked+label{
+    color: blue;
 }

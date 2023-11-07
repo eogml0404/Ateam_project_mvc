@@ -2,6 +2,7 @@ package app.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -39,56 +40,28 @@ public class MemberController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 			
-		} else if(location.equals("memberJoin.jsp")) {
+		}else if(location.equals("studentJoinAction.do")) {
 			
-			String path = "/member/memberJoin.jsp";
-			//화면용도의 주소는 forward로 토스해서 해당 찐 주소로 보낸다.
-			RequestDispatcher rd = request.getRequestDispatcher(path);
-			rd.forward(request, response);
+
+			String s_id = request.getParameter("memberId");
+			String s_pwd = request.getParameter("memberPwd");
+			String s_name = request.getParameter("memberName");
+			String s_phone = request.getParameter("memberPhone");
+			String s_email = request.getParameter("memberEmail");
+			int s_birth = Integer.parseInt(request.getParameter("memberBirth"));
+			String s_major = request.getParameter("memberMajor");
 			
-		} else if(location.equals("memberJoinAction.do")) {
+			LocalDate now = LocalDate.now();
+			int year = now.getYear();
 			
 			
-			//데이터를 넘겨주면 요청객체는 그 값을 받아서 넘어온 매개변수에 담긴 값을
-			//꺼내서 새로운 변수에 담는다
-			String memberId = request.getParameter("memberId");
-			String memberName = request.getParameter("memberName");
-			String memberPwd = request.getParameter("memberPwd");
-			String memberPhone = request.getParameter("memberPhone");
-			String memberEmail = request.getParameter("memberEmail");
-			String memberYear = request.getParameter("memberYear");
-			String memberMonth = request.getParameter("memberMonth");
-			String memberDay = request.getParameter("memberDay");
-			String memberGender = request.getParameter("memberGender");
-			String memberAddr = request.getParameter("memberAddr");
-			String[] memberHobby = request.getParameterValues("memberHobby");
-			String str = "";
-			for(int i=0; i<memberHobby.length; i++){
-				str += memberHobby[i];
-				str += ", ";
-			}
-			str = str.substring(0, str.length()-2); //마지막 ", " 지우기
-
-
-			//쿼리를 실행할 객체를 생성해서
-			//DB에 입력한다
-
-
-			String memberBirth=memberYear+memberMonth+memberDay;
-
-			//쿼리를 실행시키는 객체반환 사용
-			//stmt 객체 사용
-			//Statement stmt = conn.createStatement();
-
-			/* String new_index_q = "SELECT MAX(MIDX) FROM MEMBER0803";
-			ResultSet new_index = stmt.executeQuery(new_index_q);
-			int index_num =0;
-			while(new_index.next()) {
-				index_num = new_index.getInt(1) +1;
-			} 
-			-> 시퀀스 알기 전의 코드*/
+			
+			//int s_no = year*100000;
+			//s_no += (int)(Math.random() * 89999);
+			//중복 체크하는 메소드 필요
+			
 			MemberDao md = new MemberDao();
-			int exec = md.memberInsert(memberId, memberPwd, memberName, memberBirth, memberGender, memberPhone, memberEmail, memberAddr, str);
+			int exec = md.studentInsert(s_id, s_pwd, s_name, s_phone, s_email, s_birth, s_major);
 
 			PrintWriter out = response.getWriter();
 			//boolean tf = stmt.execute(sql);//해당 구문(쿼리)를 실행시킨다
@@ -99,7 +72,42 @@ public class MemberController extends HttpServlet {
 				//자동 이동 메소드
 				//response.sendRedirect(request.getContextPath()+"/member/memberList.html");
 				out.println("<script>alert(\"회원가입되었습니다.\");"
-				+"document.location.href='"+request.getContextPath()+"/member/memberList.do'</script>");
+				+"document.location.href='"+request.getContextPath()+"/index.jsp'</script>");
+			}else{
+				out.println("<script>history.back();</script>");
+			}
+			
+		}else if(location.equals("professorJoinAction.do")) {
+			
+
+			String p_id = request.getParameter("memberId");
+			String p_pwd = request.getParameter("memberPwd");
+			String p_name = request.getParameter("memberName");
+			String p_phone = request.getParameter("memberPhone");
+			String p_email = request.getParameter("memberEmail");
+			int p_birth = Integer.parseInt(request.getParameter("memberBirth"));
+			String p_major = request.getParameter("memberMajor");
+			
+			LocalDate now = LocalDate.now();
+			int year = now.getYear();
+			
+			//int p_no = year*10000;
+			//p_no += (int)(Math.random() * 8999);
+			//중복 체크하는 메소드 필요
+			
+			MemberDao md = new MemberDao();
+			int exec = md.professorInsert(p_id, p_pwd, p_name, p_phone, p_email, p_birth, p_major);
+
+			PrintWriter out = response.getWriter();
+			//boolean tf = stmt.execute(sql);//해당 구문(쿼리)를 실행시킨다
+
+			//System.out.println(sql);
+			//System.out.println(tf);
+			if(exec == 1){
+				//자동 이동 메소드
+				//response.sendRedirect(request.getContextPath()+"/member/memberList.html");
+				out.println("<script>alert(\"회원가입되었습니다.\");"
+				+"document.location.href='"+request.getContextPath()+"/index.jsp'</script>");
 			}else{
 				out.println("<script>history.back();</script>");
 			}

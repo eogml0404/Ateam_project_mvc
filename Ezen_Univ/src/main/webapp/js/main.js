@@ -7,19 +7,19 @@ window.onload = function(){
 
     switch(dayOfWeek){
         case 1:
-            tdyweek = 2;
+            tdyweek = 1;
             break;
         case 2:
-            tdyweek = 3;
+            tdyweek = 2;
             break;
         case 3:
-            tdyweek = 4;
+            tdyweek = 3;
             break;
         case 4:
-            tdyweek = 5;
+            tdyweek = 4;
             break;
         case 5:
-            tdyweek = 6;
+            tdyweek = 5;
             break;
     }
 	

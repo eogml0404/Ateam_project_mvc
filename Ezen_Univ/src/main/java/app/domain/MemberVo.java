@@ -24,6 +24,7 @@ public class MemberVo {
 	private int p_birth;
 	private String p_major;
 	private String p_yn;
+	
 	public int getSidx() {
 		return sidx;
 	}
