@@ -1,6 +1,7 @@
 package app.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,12 +31,22 @@ public class FrontController extends HttpServlet {
 		if(str.equals("member")) {
 			MemberController mc = new MemberController(location);
 			mc.doGet(request, response);
-		} /*
-			 * else if(str.equals("board")) { BoardController bc = new
-			 * BoardController(location); bc.doGet(request, response); }else
-			 * if(str.equals("comment")) { CommentController cc = new
-			 * CommentController(location); cc.doGet(request, response); }
-			 */
+		} 
+			 else if(str.equals("course")) { 
+				 CourseController cc = new CourseController(location); 
+				 cc.doGet(request, response); 
+			 }else if(str.equals("attendance")) { 
+				 AttendanceController ac = new AttendanceController(location); 
+				 ac.doGet(request, response); 
+			 }else if(str.equals("notice")) { 
+				 NoticeController nc = new NoticeController(location); 
+				 nc.doGet(request, response); 
+			 }
+			 else if(str.equals("admin")) { 
+				 AdminController adc = new AdminController(location); 
+				 adc.doGet(request, response); 
+			 }
+			
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

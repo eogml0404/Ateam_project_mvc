@@ -13,7 +13,7 @@
         .container{
             display: flex;
         }
-        .sidebar{
+        .sidebar{w
             width: 50%;
         }
         .myinfo{
