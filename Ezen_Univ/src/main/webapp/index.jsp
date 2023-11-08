@@ -53,7 +53,7 @@ function join(){
 		alert("비밀번호를 입력하세요");
 		fm.memberPwd.focus();
 		return;
-	}else if(!fm.memberPwd.value.equals(fm.memberPwd2.value)){
+	}else if(fm.memberPwd.value !== fm.memberPwd2.value){
 		alert("비밀번호가 일치하지 않습니다");
 		fm.memberPwd2.value="";
 		fm.memberPwd2.focus();
@@ -86,9 +86,9 @@ function join(){
 	}
 	
 	
-	var value = document.querySelector('input[name="selectjoin"]:checked').value;
-	
-	if(value==='student'){
+	var selectvalue = document.querySelector('input[name="selectjoin"]:checked').value;
+
+	if(selectvalue==='student'){
         fm.action ="<%=request.getContextPath()%>/member/studentJoinAction.do"; 
 	    fm.method = "post"; 
 	    fm.submit();

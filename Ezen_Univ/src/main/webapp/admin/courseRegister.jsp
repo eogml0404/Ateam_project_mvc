@@ -86,22 +86,20 @@
              </div>
             <br>
             <div align="right">
-            	<input type="button" name="btn" value="강의 등록하기" onclick="check();">
+            	<input type="button" name="btn" value="강의 등록하기" onclick="check();" style="width:120px">
             </div>
 			<br>
 			<br>
-			<table class="register" width="100%">
-			<tr>
-			<td colspan="4" align="center" height="30px"><h3>강의등록</h3>
-			</td>
-			</tr>
+			<table class="register" style="width:100%">
+			<h3 align ="center">강의등록현황</h3>
+			<br>
 			<tr>
 				<td align="center" width="15%">과목명</td>
-				<td width="35%">
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" name="coursename" value="고급프로그래밍 언어 및 실습">
 				</td>
 				<td align="center" width="15%">전공</td>
-				<td width="35%">
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" list="major-options" />
 					<datalist id="major-options">
 						<option value="건축공학과" />
@@ -123,12 +121,13 @@
 						<option value="항공우주공학" />
 						<option value="화학공학과" />
 					</datalist>
+					&ensp;
 					<input type="button" name="btn" value="조회" onclick="check();">
 	            </td>
 			</tr>
 			<tr>
 				<td align="center">담당교수</td>
-	            <td>
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" list="courseprofessor-options" />
 					<datalist id="courseprofessor-options">
 						<option value="박광진" />
@@ -138,12 +137,12 @@
 					</datalist>
 	            </td>
 	            <td align="center">교수번호</td>
-	            <td>
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" name="professornumber" value="20231107">
 	            </td>
 			<tr>
 				<td align="center">수강학년</td>
-				<td>
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" list="grade-options" />
 					<datalist id="grade-options">
 						<option value="1" />
@@ -153,7 +152,7 @@
 				</datalist>
 				</td>
 				<td align="center">이수구분</td>
-				<td>
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" list="seperation-options" />
 					<datalist id="seperation-options">
 						<option value="교양선택" />
@@ -165,7 +164,7 @@
 			</tr>
 			<tr>
 				<td align="center">학점</td>
-				<td>
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" list="score-options" />
 					<datalist id="score-options">
 						<option value="1" />
@@ -174,13 +173,13 @@
 					</datalist>
 				</td>
 				<td align="center">강의실</td>
-				<td>
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" name="courseroom" value="공학관 전산실 3">
 				</td>
 			</tr>
 			<tr>
 				<td align="center">요일</td>
-				<td>
+				<td style="padding: 0px 0px 0px 15px; width:35%;">
 					<input type="text" list="courseweek-options" />
 					<datalist id="courseweek-options">
 						<option value="월" />
@@ -192,18 +191,18 @@
 					</datalist>
 				</td>
 				<td align="center">교시</td>
-				<td>
-					<label for="1교시"><input type="checkbox" id="1period" name="1period" value=1> 1교시</label>
-					<label for="2교시"><input type="checkbox" id="2period" name="2period" value=2> 2교시</label>
-					<label for="3교시"><input type="checkbox" id="3period" name="3period" value=3> 3교시</label>
+				<td style="padding: 0px 0px 0px 30px; width:35%;">
+					<label for="1교시"><input type="checkbox" id="1period" name="1period" value=1> 1교시</label>&emsp;
+					<label for="2교시"><input type="checkbox" id="2period" name="2period" value=2> 2교시</label>&emsp;
+					<label for="3교시"><input type="checkbox" id="3period" name="3period" value=3> 3교시</label>&emsp;
 					<br>
-					<label for="4교시"><input type="checkbox" id="4period" name="4period" value=4> 4교시</label>
-					<label for="5교시"><input type="checkbox" id="5period" name="5period" value=5> 5교시</label>
-					<label for="6교시"><input type="checkbox" id="6period" name="6period" value=6> 6교시</label>
+					<label for="4교시"><input type="checkbox" id="4period" name="4period" value=4> 4교시</label>&emsp;
+					<label for="5교시"><input type="checkbox" id="5period" name="5period" value=5> 5교시</label>&emsp;
+					<label for="6교시"><input type="checkbox" id="6period" name="6period" value=6> 6교시</label>&emsp;
 					<br>
-					<label for="7교시"><input type="checkbox" id="7period" name="7period" value=7> 7교시</label>
-					<label for="8교시"><input type="checkbox" id="8period" name="8period" value=8> 8교시</label>
-					<label for="9교시"><input type="checkbox" id="9period" name="9period" value=9> 9교시</label>
+					<label for="7교시"><input type="checkbox" id="7period" name="7period" value=7> 7교시</label>&emsp;
+					<label for="8교시"><input type="checkbox" id="8period" name="8period" value=8> 8교시</label>&emsp;
+					<label for="9교시"><input type="checkbox" id="9period" name="9period" value=9> 9교시</label>&emsp;
 				</td>
 			</tr>
 			</table>
