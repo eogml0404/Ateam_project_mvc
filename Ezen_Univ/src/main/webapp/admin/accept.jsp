@@ -43,15 +43,15 @@
 <body>
 
     <div class="header">
-        <iframe src = "../main/navigation_a.html" width = "100%" height="55" ></iframe>
+        <iframe src = "../main/navigation_a.jsp" width = "100%" height="55" ></iframe>
     </div>
     <div class="container">
         <div class="sidebar">
             <div class="myinfo">
-                <iframe src = "../leftmenu/myinfo_a.html" width="100%" height="20%"></iframe>
+                <iframe src = "../leftmenu/myinfo_a.jsp" width="100%" height="20%"></iframe>
             </div>
             <div class="menubar">
-                <iframe src = "../leftmenu/accept_a.html" width="100%" height="100%"></iframe>
+                <iframe src = "../leftmenu/accept_a.jsp" width="100%" height="100%"></iframe>
             </div>
         </div>
         <div class="contents">
